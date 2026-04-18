@@ -1,0 +1,2 @@
+# myblog
+An easy page
