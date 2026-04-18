@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} - Moip 的和风日志</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⛩️</text></svg>">
+    <style>
+        :root {
+            --bg-color: #fdfbf7; --ink-black: #2b2b2b; --urushi-red: #b22d35; --gold: #c5a059; --border-color: #e0ddd5;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; cursor: none; }
+        body {
+            background-color: var(--bg-color); color: var(--ink-black);
+            font-family: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif SC", "Songti SC", serif;
+            line-height: 1.8; background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+        }
+        #cursor {
+            width: 12px; height: 12px; background-color: var(--urushi-red); border-radius: 50%;
+            position: fixed; pointer-events: none; z-index: 9999;
+            transition: transform 0.1s ease-out; box-shadow: 0 0 10px rgba(178, 45, 53, 0.4);
+        }
+        .container { max-width: 750px; margin: 0 auto; padding: 60px 25px; }
+        .nav-back { margin-bottom: 50px; display: inline-block; text-decoration: none; color: var(--ink-black); font-size: 0.9rem; border-bottom: 1px solid var(--urushi-red); padding-bottom: 5px; transition: all 0.3s; }
+        .nav-back:hover { color: var(--urushi-red); padding-right: 15px; }
+        .post-header { text-align: center; margin-bottom: 60px; }
+        .post-header h1 { font-size: 2.2rem; font-weight: 500; margin-bottom: 20px; letter-spacing: 0.1em; }
+        .post-date { font-size: 0.9rem; color: #888; letter-spacing: 0.2em; }
+        .post-content { font-size: 1.1rem; color: #333; text-align: justify; }
+        .post-content p { margin-bottom: 2em; }
+        .post-content h2 { border-left: 5px solid var(--urushi-red); padding-left: 15px; margin: 60px 0 30px; font-size: 1.5rem; background: linear-gradient(to right, rgba(178,45,53,0.05), transparent); }
+        blockquote { margin: 40px 0; padding: 20px 30px; border: 1px solid var(--border-color); background-color: rgba(255,255,255,0.4); font-style: italic; position: relative; }
+        blockquote::before { content: "“"; color: var(--urushi-red); font-size: 3rem; position: absolute; top: -10px; left: 10px; opacity: 0.2; }
+        .post-content img { max-width: 100%; height: auto; display: block; margin: 40px auto; border: 1px solid var(--border-color); padding: 8px; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        footer { margin-top: 100px; padding-top: 30px; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.8rem; color: #aaa; }
+        @media (max-width: 600px) { .post-header h1 { font-size: 1.6rem; } .container { padding: 40px 20px; } }
+    </style>
+</head>
+<body>
+    <div id="cursor"></div>
+    <div class="container">
+        <a href="index.html" class="nav-back">← 首页に戻る / 返回主页</a>
+        <article>
+            <header class="post-header">
+                <div class="post-date">{{date}}</div>
+                <h1>{{title}}</h1>
+            </header>
+            <section class="post-content">
+                {{content}}
+            </section>
+        </article>
+        <footer>© 2026 Moip | Built with Zen</footer>
+    </div>
+    <script>
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+        const links = document.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'scale(4)';
+                cursor.style.backgroundColor = 'rgba(178, 45, 53, 0.2)';
+                cursor.style.border = '1px solid var(--urushi-red)';
+            });
+            link.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'scale(1)';
+                cursor.style.backgroundColor = 'var(--urushi-red)';
+                cursor.style.border = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
