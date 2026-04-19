@@ -1,0 +1,36 @@
+name: Moip Blog Auto Build
+
+on:
+  push:
+    branches:
+      - main  # 当你向 main 分支推送代码时触发
+
+permissions:
+  contents: write  # 允许机器人把生成的 HTML 推送到你的仓库
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v3
+
+      - name: 安装 Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: 安装依赖库
+        run: |
+          pip install markdown PyYAML
+
+      - name: 运行构建脚本
+        run: python build.py
+
+      - name: 自动提交并发布
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          # 如果没有内容变化则跳过，防止报错
+          git diff --quiet && git diff --staged --quiet || (git commit -m "⛩️ 自动更新博客内容" && git push)
