@@ -32,15 +32,12 @@
         }
         header h1 { font-size: 1.8rem; letter-spacing: 0.5em; }
         main { border-left: 1px solid var(--border-color); padding-left: 40px; }
-        
-        /* 动态生成的文章列表样式 */
         article { margin-bottom: 60px; position: relative; }
         article::before { content: "◆"; position: absolute; left: -48px; color: var(--gold); }
         .post-date { font-size: 0.9rem; color: #888; margin-bottom: 10px; }
         .post-title { font-size: 1.5rem; margin-bottom: 15px; color: var(--ink-black); text-decoration: none; display: block; transition: color 0.3s; }
         .post-title:hover { color: var(--urushi-red); }
         .post-excerpt { font-size: 1rem; color: #555; text-align: justify; }
-
         aside { font-size: 0.9rem; display: flex; flex-direction: column; align-items: center; }
         .profile-card { border: 1px solid var(--border-color); padding: 20px; background: rgba(255,255,255,0.5); width: 100%; }
         .profile-card h3 { border-bottom: 2px solid var(--urushi-red); padding-bottom: 5px; margin-bottom: 15px; }
@@ -51,7 +48,6 @@
         .p2 { top: 50%; left: 60%; transform: rotate(15deg); }
         .p3 { top: 80%; left: 20%; transform: rotate(-60deg) scale(1.1); }
         .vertical-motto { margin-top: 10px; color: var(--gold); font-size: 1.2rem; writing-mode: vertical-rl; letter-spacing: 0.3em; opacity: 0.8; }
-
         @media (max-width: 768px) {
             .container { grid-template-columns: 1fr; padding: 20px; }
             header { writing-mode: horizontal-tb; border-left: none; border-bottom: 1px solid var(--ink-black); padding-bottom: 20px; }
@@ -69,11 +65,9 @@
             <h1>静水流深</h1>
             <p style="margin-top: 20px; font-size: 0.8rem; color: #888;">個人ブログ</p>
         </header>
-
         <main>
             {{post_list}}
-            </main>
-
+        </main>
         <aside>
             <div class="profile-card">
                 <h3>关于 Moip</h3>
