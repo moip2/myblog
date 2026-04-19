@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moip 的日志</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⛩️</text></svg>">
+    <style>
+        :root {
+            --bg-color: #fdfbf7; --ink-black: #2b2b2b; --urushi-red: #b22d35; --gold: #c5a059; --border-color: #e0ddd5;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; cursor: none; }
+        body {
+            background-color: var(--bg-color); color: var(--ink-black);
+            font-family: "Yu Mincho", "Hiragino Mincho ProN", "Songti SC", "Serif";
+            line-height: 1.8; background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png'); 
+        }
+        #cursor {
+            width: 12px; height: 12px; background-color: var(--urushi-red); border-radius: 50%;
+            position: fixed; pointer-events: none; z-index: 9999;
+            transition: transform 0.1s ease-out; box-shadow: 0 0 10px rgba(178, 45, 53, 0.5);
+        }
+        .container {
+            max-width: 1000px; margin: 0 auto; display: grid;
+            grid-template-columns: 100px 1fr 250px; gap: 40px; padding: 60px 20px;
+        }
+        header { writing-mode: vertical-rl; text-orientation: mixed; border-left: 1px solid var(--ink-black); padding-right: 20px; }
+        .logo-hanko {
+            width: 50px; height: 50px; border: 3px solid var(--urushi-red); color: var(--urushi-red);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; font-size: 24px; margin-bottom: 20px; writing-mode: horizontal-tb;
+        }
+        header h1 { font-size: 1.8rem; letter-spacing: 0.5em; }
+        main { border-left: 1px solid var(--border-color); padding-left: 40px; }
+        article { margin-bottom: 60px; position: relative; }
+        article::before { content: "◆"; position: absolute; left: -48px; color: var(--gold); }
+        .post-date { font-size: 0.9rem; color: #888; margin-bottom: 10px; }
+        .post-title { font-size: 1.5rem; margin-bottom: 15px; color: var(--ink-black); text-decoration: none; display: block; transition: color 0.3s; }
+        .post-title:hover { color: var(--urushi-red); }
+        .post-excerpt { font-size: 1rem; color: #555; text-align: justify; }
+        aside { font-size: 0.9rem; display: flex; flex-direction: column; align-items: center; }
+        .profile-card { border: 1px solid var(--border-color); padding: 20px; background: rgba(255,255,255,0.5); width: 100%; }
+        .profile-card h3 { border-bottom: 2px solid var(--urushi-red); padding-bottom: 5px; margin-bottom: 15px; }
+        .decoration-wrap { margin: 40px 0; position: relative; height: 200px; width: 40px; }
+        .sumi-line { width: 1px; height: 100%; background: linear-gradient(to bottom, transparent, var(--ink-black), transparent); opacity: 0.2; margin: 0 auto; }
+        .petal { position: absolute; width: 8px; height: 12px; background: var(--urushi-red); border-radius: 50% 0 50% 50%; opacity: 0.6; transform: rotate(-45deg); }
+        .p1 { top: 20%; left: 10%; transform: rotate(-20deg) scale(0.8); }
+        .p2 { top: 50%; left: 60%; transform: rotate(15deg); }
+        .p3 { top: 80%; left: 20%; transform: rotate(-60deg) scale(1.1); }
+        .vertical-motto { margin-top: 10px; color: var(--gold); font-size: 1.2rem; writing-mode: vertical-rl; letter-spacing: 0.3em; opacity: 0.8; }
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; padding: 20px; }
+            header { writing-mode: horizontal-tb; border-left: none; border-bottom: 1px solid var(--ink-black); padding-bottom: 20px; }
+            main { border-left: none; padding-left: 0; }
+            .decoration-wrap { height: 100px; width: 100%; display: flex; justify-content: center; }
+            .sumi-line { width: 100px; height: 1px; background: linear-gradient(to right, transparent, var(--ink-black), transparent); }
+        }
+    </style>
+</head>
+<body>
+    <div id="cursor"></div>
+    <div class="container">
+        <header>
+            <a href="index.html" class="logo-hanko" style="text-decoration: none;">Moip</a>
+            <h1>静水流深</h1>
+            <p style="margin-top: 20px; font-size: 0.8rem; color: #888;">個人ブログ</p>
+        </header>
+        <main>
+            
+        <article>
+            <div class="post-date">2026-04-18</div>
+            <a href="2026-04-18-tea-and-moip.html" class="post-title">煮茶论代码：在寂静中寻找逻辑</a>
+            <p class="post-excerpt">编程不只是逻辑的堆砌，更像是在一张白纸上落下的笔触。今天聊聊如何在这喧嚣的世界中，保持一颗侘寂之心。</p>
+        </article>
+        
+        <article>
+            <div class="post-date">2026-04-18</div>
+            <a href="2026-04-18-tea-and-zen.html" class="post-title">煮茶论代码：在寂静中寻找逻辑</a>
+            <p class="post-excerpt">编程不只是逻辑的堆砌，更像是在一张白纸上落下的笔触。今天聊聊如何在这喧嚣的世界中，保持一颗侘寂之心。</p>
+        </article>
+        
+        </main>
+        <aside>
+            <div class="profile-card">
+                <h3>关于 Moip</h3>
+                <p>一个在数字世界寻找宁静的旅人。喜欢墨水的味道，也喜欢代码的逻辑。</p>
+            </div>
+            <div class="decoration-wrap">
+                <div class="sumi-line"></div>
+                <div class="petal p1"></div>
+                <div class="petal p2"></div>
+                <div class="petal p3"></div>
+            </div>
+            <div class="vertical-motto">一期一会</div>
+        </aside>
+    </div>
+    <script>
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+        const links = document.querySelectorAll('a, .logo-hanko');
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'scale(4)';
+                cursor.style.backgroundColor = 'rgba(178, 45, 53, 0.2)';
+                cursor.style.border = '1px solid var(--urushi-red)';
+            });
+            link.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'scale(1)';
+                cursor.style.backgroundColor = 'var(--urushi-red)';
+                cursor.style.border = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

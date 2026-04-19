@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>煮茶论代码：在寂静中寻找逻辑 - Moip 的和风日志</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⛩️</text></svg>">
+    <style>
+        :root {
+            --bg-color: #fdfbf7; --ink-black: #2b2b2b; --urushi-red: #b22d35; --gold: #c5a059; --border-color: #e0ddd5;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; cursor: none; }
+        body {
+            background-color: var(--bg-color); color: var(--ink-black);
+            font-family: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif SC", "Songti SC", serif;
+            line-height: 1.8; background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+        }
+        #cursor {
+            width: 12px; height: 12px; background-color: var(--urushi-red); border-radius: 50%;
+            position: fixed; pointer-events: none; z-index: 9999;
+            transition: transform 0.1s ease-out; box-shadow: 0 0 10px rgba(178, 45, 53, 0.4);
+        }
+        .container { max-width: 750px; margin: 0 auto; padding: 60px 25px; }
+        .nav-back { margin-bottom: 50px; display: inline-block; text-decoration: none; color: var(--ink-black); font-size: 0.9rem; border-bottom: 1px solid var(--urushi-red); padding-bottom: 5px; transition: all 0.3s; }
+        .nav-back:hover { color: var(--urushi-red); padding-right: 15px; }
+        .post-header { text-align: center; margin-bottom: 60px; }
+        .post-header h1 { font-size: 2.2rem; font-weight: 500; margin-bottom: 20px; letter-spacing: 0.1em; }
+        .post-date { font-size: 0.9rem; color: #888; letter-spacing: 0.2em; }
+        .post-content { font-size: 1.1rem; color: #333; text-align: justify; }
+        .post-content p { margin-bottom: 2em; }
+        .post-content h2 { border-left: 5px solid var(--urushi-red); padding-left: 15px; margin: 60px 0 30px; font-size: 1.5rem; background: linear-gradient(to right, rgba(178,45,53,0.05), transparent); }
+        blockquote { margin: 40px 0; padding: 20px 30px; border: 1px solid var(--border-color); background-color: rgba(255,255,255,0.4); font-style: italic; position: relative; }
+        blockquote::before { content: "“"; color: var(--urushi-red); font-size: 3rem; position: absolute; top: -10px; left: 10px; opacity: 0.2; }
+        .post-content img { max-width: 100%; height: auto; display: block; margin: 40px auto; border: 1px solid var(--border-color); padding: 8px; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        footer { margin-top: 100px; padding-top: 30px; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.8rem; color: #aaa; }
+        @media (max-width: 600px) { .post-header h1 { font-size: 1.6rem; } .container { padding: 40px 20px; } }
+    </style>
+</head>
+<body>
+    <div id="cursor"></div>
+    <div class="container">
+        <a href="index.html" class="nav-back">← 首页に戻る / 返回主页</a>
+        <article>
+            <header class="post-header">
+                <div class="post-date">2026-04-18</div>
+                <h1>煮茶论代码：在寂静中寻找逻辑</h1>
+            </header>
+            <section class="post-content">
+                <h2>🍵 程序员的茶道</h2>
+<p>在深夜敲击键盘时，我习惯在手边放一杯苦茶。随着热气升腾，复杂的算法逻辑似乎也变得像茶叶一样，在水中缓缓舒展，最终沉淀。</p>
+<h3>为什么代码需要“留白”？</h3>
+<p>在日式美学中，<strong>“间”（Ma）</strong> 是一种极其重要的概念。它不是虚无，而是为了让存在的东西更有力量。</p>
+<ul>
+<li><strong>冗余的代码</strong>就像杂乱的庭院，让人抓不住重点。</li>
+<li><strong>优雅的函数</strong>则像枯山水中的石块，位置精准，周围留有足够的余地供人思考。</li>
+</ul>
+<blockquote>
+<p>“真正的简约，不是在没有东西可以添加的时候，而是在没有东西可以删减的时候。”</p>
+</blockquote>
+<hr />
+<h2>🍂 今天的感悟</h2>
+<p>今天完成了博客的自动化配置。看着 GitHub Actions 的绿色勾勾亮起，那种感觉就像是亲手修剪好了一株盆景。</p>
+<h3>计划清单</h3>
+<ol>
+<li><strong>打磨 CSS 细节</strong>：让落樱的动画更加自然。</li>
+<li><strong>整理读书笔记</strong>：最近在读《阴翳礼赞》。</li>
+<li><strong>练习书法</strong>：尝试在屏幕上模拟墨迹的质感。</li>
+</ol>
+<h2>结语</h2>
+<p>写博客不是为了向世界呐喊，而是为了在岁月的长河里，给自己留下一点点回声。</p>
+<p><img alt="禅意空间" src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" />
+<em>愿你的逻辑如水，心境如禅。</em></p>
+            </section>
+        </article>
+        <footer>© 2026 Moip | Built with Zen</footer>
+    </div>
+    <script>
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+        const links = document.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'scale(4)';
+                cursor.style.backgroundColor = 'rgba(178, 45, 53, 0.2)';
+                cursor.style.border = '1px solid var(--urushi-red)';
+            });
+            link.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'scale(1)';
+                cursor.style.backgroundColor = 'var(--urushi-red)';
+                cursor.style.border = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
